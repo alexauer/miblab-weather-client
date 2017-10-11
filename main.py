@@ -12,7 +12,7 @@ with open('config.json') as config_file:
 
 while True:
 
-    while process.check_eth_connection():
+    while process.check_connectivity(config["connectionModul"]):
 
         payload = process.prepare_message(config)
 
@@ -29,3 +29,9 @@ while True:
                 break
         ## sleep
         time.sleep(config["sendInterval"])
+
+
+           
+
+   
+  

@@ -40,8 +40,8 @@ def get_ntp_time(ntp_server):
         return False
         
 ## checks ethernet connection, returns True if connected 
-def check_eth_connection():
-    addr = netifaces.ifaddresses('wlan0')
+def check_connectivity(modul):
+    addr = netifaces.ifaddresses(modul)
     return netifaces.AF_INET in addr
 
 ##  prepare the payload with message and message hash 
@@ -90,3 +90,11 @@ def send_message(config,payload):
     response = r.json()
 
     return(response)
+
+
+
+
+
+
+
+
