@@ -46,10 +46,15 @@ def check_connectivity(modul):
 
 ##  prepare the payload with message and message hash 
 def prepare_message(config):
+    
+    timestamp = 0
+    timestamp = round(get_ntp_time(config["ntpServer"]))
 
     sense = SenseHat()
     sensor_id = get_serial()
-    id_hash = hmac.new(config["hashIDKey"].encode('utf-8'),sensor_id.encode('utf-8'), hashlib.sha256).hexdigest()
+    key = str(timestamp)[-4:] + config["hashIDKey"]
+    print(key)
+    id_hash = hmac.new(key.encode('utf-8'),sensor_id.encode('utf-8'), hashlib.sha256).hexdigest()
 
     t = sense.get_temperature()
     p = sense.get_pressure()
@@ -60,9 +65,6 @@ def prepare_message(config):
     p = round(p)
     h = round(h)
 
-    timestamp = 0
-    timestamp = round(get_ntp_time(config["ntpServer"]))
-    
     msg = {}
     msg = {'sensorID':sensor_id,
            'sensorObjectID':config["sensorObjectID"],
@@ -88,7 +90,7 @@ def send_message(config,payload):
 
     r = requests.post(config["serverIP"]+':'+ config["serverPORT"] +'/sensors/', json = payload)
     response = r.json()
-
+    
     return(response)
 
 

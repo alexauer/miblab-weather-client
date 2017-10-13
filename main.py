@@ -21,7 +21,7 @@ while True:
         while tries < 3:
 
             response = process.send_message(config,payload)
-    
+
             if(response["command"]["resend"]):
                 tries += 1
                 logging.error('Server placed a resend. Response: ' + response)
