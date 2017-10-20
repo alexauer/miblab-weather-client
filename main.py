@@ -28,7 +28,7 @@ while True:
             else:
                 break
         ## sleep
-        time.sleep(config["sendInterval"])
+        time.sleep(config["sendInterval"]-180)
 
 
            
