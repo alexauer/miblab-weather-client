@@ -58,14 +58,13 @@ def get_average_weather_data(avg_steps):
         t += sense.get_temperature()
         p += sense.get_pressure()
         h += sense.get_humidity()
-        print(t)
         time.sleep(60)
 
     t_avg = t/avg_steps
     p_avg = p/avg_steps
     h_avg = h/avg_steps
 
-    print(t_avg)
+  
     return t_avg, p_avg, h_avg
 
 ##  prepare the payload with message and message hash 
