@@ -1,5 +1,5 @@
-# miblab-weather-client
-A basic (Python) raspberry pi client for the miblab weather station.
+# Saturn Tower Client
+A basic (Python) raspberry pi client for the saturn tower weather station.
 
 ### Prerequisites
 Client currently tested with Python v3.5.3
