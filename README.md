@@ -22,7 +22,7 @@ Create a config.json file in the client folder and insert the correct parameters
 "sendInterval":300,
 "hashIDKey":"myHashIDKey",
 "hashMsgKey":"myHashMsgKey",
-"ntpServer":"myPrefferedNTPServer",
+"ntpServer":"myPreferedNTPServer",
 "serverIP":"myServerIP",
 "serverPORT":"MyServerPORT",
 "connectionModul":"myConnectivity(ETH/WIFI)"
