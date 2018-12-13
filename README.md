@@ -12,7 +12,7 @@ Following packages need to be installed.
 
 Copy the repository into your prefered folder.
 
-Create a config.json file in the client folder and insert the correct parameters matched to your Node.js weahter server.
+Create a config.json file in the client folder and insert the correct parameters matched to your Node.js weather server.
 
 ```javascript
 {
