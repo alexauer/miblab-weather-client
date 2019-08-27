@@ -5,13 +5,13 @@ import time
 import process 
 
 ## create logger
-logging.basicConfig(format="%(asctimes)s:%(levelname)s:%(message)s", filename="./SenseHat/logs/sensor.log", level=logging.ERROR)
+logging.basicConfig(format="%(asctimes)s:%(levelname)s:%(message)s", filename="./saturn-tower-client/logs/sensor.log", level=logging.ERROR)
 
 ## load config data form config.json
-with open('./SenseHat/config.json') as config_file:
+with open('./saturn-tower-client/config.json') as config_file:
     config = json.load(config_file)
 
-print("Miblab weather client started. Don't close this window.")
+print("Saturn Tower weather client started. Don't close this window.")
 
 ## start main task
 while True:
